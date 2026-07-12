@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TAG STORE – Payment Page</title>
   <meta name="description" content="TAG STORE – Men's Wear Payment Page">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="watermark" aria-hidden="true"></div>
 
 <div class="page">
 
@@ -26,40 +30,32 @@
       <div class="card-icon">Instapay</div>
       <div class="card-name">Abo Malika</div>
       <div class="card-number">0111 696 3100</div>
-      <button class="copy-btn" onclick="copyNumber('01116963100')">Copy</button>
-      <div class="qr-wrap">
-        <img src="card1-instapay-qr.jpg" alt="Instapay QR Code">
-      </div>
+      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card1" data-qr-value="https://ipn.eg/C/Q/nanazk10/instapay?ISIGN=23052603MEYCIQCYrjBTCczMKdMkpHNQySC0kUE2ngdnwHIAKIvqkd5AKQIhAJANmrsh/itN1nAPVl61PwzpKVlP2hrtXcZrAY5uPeQr"></div>
     </div>
 
     <div class="card">
       <div class="card-icon">Etisalat</div>
       <div class="card-name">Abo Malika</div>
       <div class="card-number">0111 696 3100</div>
-      <button class="copy-btn" onclick="copyNumber('01116963100')">Copy</button>
-      <div class="qr-wrap">
-        <img src="card2-etisalat-qr.jpg" alt="Etisalat Cash QR Code">
-      </div>
+      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card2" data-qr-value="https://app.etisalat.eg/?appScreens=cash&amp;appScreen=cash&amp;extra=screenId:send_money;dial:01116963100"></div>
     </div>
 
     <div class="card">
       <div class="card-icon">Instapay</div>
       <div class="card-name">Halim</div>
       <div class="card-number">0100 046 2112</div>
-      <button class="copy-btn" onclick="copyNumber('01000462112')">Copy</button>
-      <div class="qr-wrap">
-        <img src="card3-instapay-qr.jpg" alt="Instapay QR Code">
-      </div>
+      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card3" data-qr-value="https://ipn.eg/C/Q/m.halim5030gmail.com/instapay?ISIGN=23052601MEUCIQCR8my3ban6a1oAQisJlQMGYkxfizKMH4RMrrQ5gEe+egIgVxvntx8xqs9usF8ctqj1nxtBuBtlK5tlvnE9yQwhpZ8="></div>
     </div>
 
     <div class="card">
       <div class="card-icon">Vodafone</div>
       <div class="card-name">Halim</div>
       <div class="card-number">0100 046 2112</div>
-      <button class="copy-btn" onclick="copyNumber('01000462112')">Copy</button>
-      <div class="qr-wrap">
-        <img src="card4-vodafone-qr.jpg" alt="Vodafone Cash QR Code">
-      </div>
+      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card4" data-qr-value="http://vf.eg/vfcash?id=mt&amp;qrId=a2iaIT&amp;qrString=df1be5b521c0e47448c8f43f341eccb5e92b1c232f917dcedaef7da22ba10699"></div>
     </div>
 
   </div>
@@ -74,9 +70,7 @@
       <a class="social-link"
          href="https://www.tiktok.com/@mhalim5030?_r=1&_t=ZS-97ppYDa4ezk"
          target="_blank" rel="noopener noreferrer">Visit Page</a>
-      <div class="qr-wrap">
-        <img src="tiktok-qr.jpg" alt="TikTok QR Code">
-      </div>
+      <div class="qr-wrap" id="qr-tiktok" data-qr-value="https://www.tiktok.com/@mhalim5030?_r=1&amp;_t=ZS-97ppYDa4ezk"></div>
     </div>
 
     <div class="social-card">
@@ -84,9 +78,7 @@
       <a class="social-link"
          href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"
          target="_blank" rel="noopener noreferrer">Join Group</a>
-      <div class="qr-wrap">
-        <img src="whatsapp-qr.jpg" alt="WhatsApp QR Code">
-      </div>
+      <div class="qr-wrap" id="qr-whatsapp" data-qr-value="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"></div>
     </div>
 
   </div>
@@ -100,6 +92,7 @@
 
 <div class="toast" id="toast">Copied</div>
 
+<script src="qrcode.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

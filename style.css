@@ -1,7 +1,29 @@
 /* =============================================
    TAG STORE — style.css
-   Dark Luxury Theme
+   Dark Luxury Theme v2 — unified card/QR system
    ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+  /* ---- Color tokens ---- */
+  --bg-0: #050505;
+  --bg-1: #0d0d0d;
+  --bg-2: #131313;
+  --card-bg: #111111;
+  --card-border: #222222;
+  --gold: #c9a96e;
+  --gold-soft: rgba(201, 169, 110, 0.35);
+  --gold-dim: rgba(201, 169, 110, 0.14);
+  --text-main: #f2f0ea;
+  --text-muted: #7a7a7a;
+  --qr-frame: #ffffff;
+
+  /* ---- Type tokens ---- */
+  --font-display: 'Bebas Neue', 'Tajawal', sans-serif;
+  --font-body: 'Montserrat', 'Tajawal', sans-serif;
+  --font-arabic: 'Tajawal', 'Cairo', sans-serif;
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,16 +31,36 @@
   padding: 0;
 }
 
+html { background: var(--bg-0); }
+
 body {
-  background: #0a0a0a;
-  color: #e8e8e8;
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 0%, var(--bg-2), var(--bg-1) 45%, var(--bg-0) 100%);
+  color: var(--text-main);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---- Watermark layer (fixed, low-opacity, tiled) ---- */
+.watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('logo.jpg');
+  background-repeat: repeat;
+  background-size: 380px;
+  opacity: 0.04;
+  filter: blur(0.5px);
 }
 
 /* ---- Page wrapper ---- */
 .page {
+  position: relative;
+  z-index: 1;
   max-width: 480px;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
@@ -30,33 +72,22 @@ body {
   padding: 2.5rem 0 2rem;
 }
 
-.logo-circle {
-  width: 72px;
-  height: 72px;
-  border: 1.5px solid #c9a96e;
-  border-radius: 50%;
-  margin: 0 auto 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #c9a96e;
-}
-
 .brand {
-  font-size: 28px;
+  font-family: var(--font-display);
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: 8px;
   color: #fff;
   margin-bottom: 4px;
+  line-height: 1;
 }
 
 .sub {
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 500;
   letter-spacing: 4px;
-  color: #c9a96e;
+  color: var(--gold);
   text-transform: uppercase;
 }
 
@@ -77,16 +108,18 @@ body {
 .divider-dot {
   width: 4px;
   height: 4px;
-  background: #c9a96e;
+  background: var(--gold);
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 /* ---- Section label ---- */
 .section-label {
-  font-size: 10px;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
   letter-spacing: 4px;
-  color: #666;
+  color: var(--text-muted);
   text-align: center;
   margin-bottom: 1.4rem;
   text-transform: uppercase;
@@ -100,14 +133,19 @@ body {
   margin-bottom: 1.2rem;
 }
 
-/* ---- Card ---- */
+/* ---- Card (all cards share identical box model) ---- */
 .card {
-  background: #111;
-  border: 0.5px solid #222;
-  border-radius: 14px;
+  height: 100%;
+  background: var(--card-bg);
+  border: 0.5px solid var(--card-border);
+  border-radius: 16px;
   padding: 1.1rem;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card::before {
@@ -117,13 +155,21 @@ body {
   left: 0;
   right: 0;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, #c9a96e55, transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-soft);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
 }
 
 .card-icon {
+  font-family: var(--font-body);
   font-size: 10px;
+  font-weight: 600;
   letter-spacing: 3px;
-  color: #c9a96e;
+  color: var(--gold);
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -136,55 +182,105 @@ body {
 }
 
 .card-number {
-  font-size: 15px;
-  color: #c9a96e;
-  letter-spacing: 1px;
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
   margin-bottom: 12px;
-  font-weight: 500;
 }
 
-/* ---- Copy button ---- */
+/* ---- Copy button (gold outline → gold fill on hover) ---- */
 .copy-btn {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   background: transparent;
-  border: 0.5px solid #333;
+  border: 1px solid var(--gold-soft);
   border-radius: 8px;
-  padding: 7px 0;
-  font-size: 11px;
+  padding: 9px 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 2px;
-  color: #888;
+  color: var(--gold);
   text-transform: uppercase;
   cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .copy-btn:hover {
-  border-color: #c9a96e;
-  color: #c9a96e;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
 }
 
 .copy-btn:active {
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
-/* ---- QR image ---- */
+.copy-btn.copied {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
+}
+
+/* Ripple effect element injected by script.js */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-anim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* ---- QR wrap: unified white frame + gold border for every code ---- */
 .qr-wrap {
   width: 100%;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 18px;
   overflow: hidden;
-  background: #0e0e0e;
-  border: 0.5px solid #222;
+  background: var(--qr-frame);
+  border: 1.5px solid var(--gold);
   aspect-ratio: 1;
+  padding: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 0 1px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s ease;
 }
 
-.qr-wrap img {
-  width: 100%;
+.card:hover .qr-wrap,
+.social-card:hover .qr-wrap {
+  box-shadow: 0 0 0 1px var(--gold-soft), 0 0 22px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+.qr-wrap canvas,
+.qr-wrap img,
+.qr-wrap table {
+  width: 100% !important;
+  height: 100% !important;
   display: block;
-  border-radius: 8px;
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+
+.qr-caption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 /* ---- Social row ---- */
@@ -195,25 +291,37 @@ body {
 }
 
 .social-card {
-  background: #111;
-  border: 0.5px solid #222;
-  border-radius: 14px;
+  height: 100%;
+  background: var(--card-bg);
+  border: 0.5px solid var(--card-border);
+  border-radius: 16px;
   padding: 1.1rem;
   text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .social-card::before {
   content: '';
   display: block;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, #c9a96e55, transparent);
-  margin-bottom: 14px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  margin: -1.1rem -1.1rem 14px;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-soft);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
 }
 
 .social-name {
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 600;
   letter-spacing: 3px;
-  color: #666;
+  color: var(--text-muted);
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -221,20 +329,23 @@ body {
 .social-link {
   display: block;
   background: transparent;
-  border: 0.5px solid #333;
+  border: 1px solid var(--gold-soft);
   border-radius: 8px;
-  padding: 8px 0;
-  font-size: 11px;
+  padding: 9px 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 2px;
-  color: #888;
+  color: var(--gold);
   text-decoration: none;
   text-transform: uppercase;
-  transition: border-color 0.2s, color 0.2s;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .social-link:hover {
-  border-color: #c9a96e;
-  color: #c9a96e;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
 }
 
 /* ---- Footer ---- */
@@ -246,13 +357,14 @@ body {
 }
 
 .footer-brand {
-  font-size: 13px;
+  font-family: var(--font-display);
+  font-size: 15px;
   letter-spacing: 6px;
   color: #444;
 }
 
 .footer-heart {
-  color: #c9a96e;
+  color: var(--gold);
   margin: 6px 0;
   font-size: 13px;
 }
@@ -263,9 +375,11 @@ body {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: #c9a96e;
+  background: var(--gold);
   color: #000;
+  font-family: var(--font-body);
   font-size: 11px;
+  font-weight: 600;
   letter-spacing: 2px;
   padding: 10px 22px;
   border-radius: 30px;
@@ -273,7 +387,6 @@ body {
   transition: opacity 0.3s, transform 0.3s;
   pointer-events: none;
   text-transform: uppercase;
-  font-weight: 600;
 }
 
 .toast.show {
@@ -288,4 +401,21 @@ body {
   display: block;
   margin: 0 auto 1rem;
   border-radius: 12px;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .card, .social-card, .copy-btn, .social-link, .qr-wrap, .toast {
+    transition: none !important;
+  }
+  .ripple {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* ---- Small screens ---- */
+@media (max-width: 360px) {
+  .brand { font-size: 34px; letter-spacing: 6px; }
+  .card-number { font-size: 18px; }
 }
