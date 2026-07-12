@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAG STORE – Payment Page</title>
+  <meta name="description" content="TAG STORE – Men's Wear Payment Page">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <div class="hero">
+    <img src="logo.jpg" alt="TAG Store" class="logo-img">
+    <div class="brand">TAG STORE</div>
+    <div class="sub">Men's Wear</div>
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+  <div class="section-label">Payment Methods</div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">Instapay</div>
+      <div class="card-name">Abo Malika</div>
+      <div class="card-number">0111 696 3100</div>
+      <button class="copy-btn" onclick="copyNumber('01116963100')">Copy</button>
+      <div class="qr-wrap">
+        <img src="card1-instapay-qr.jpg" alt="Instapay QR Code">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">Etisalat</div>
+      <div class="card-name">Abo Malika</div>
+      <div class="card-number">0111 696 3100</div>
+      <button class="copy-btn" onclick="copyNumber('01116963100')">Copy</button>
+      <div class="qr-wrap">
+        <img src="card2-etisalat-qr.jpg" alt="Etisalat Cash QR Code">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">Instapay</div>
+      <div class="card-name">Halim</div>
+      <div class="card-number">0100 046 2112</div>
+      <button class="copy-btn" onclick="copyNumber('01000462112')">Copy</button>
+      <div class="qr-wrap">
+        <img src="card3-instapay-qr.jpg" alt="Instapay QR Code">
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">Vodafone</div>
+      <div class="card-name">Halim</div>
+      <div class="card-number">0100 046 2112</div>
+      <button class="copy-btn" onclick="copyNumber('01000462112')">Copy</button>
+      <div class="qr-wrap">
+        <img src="card4-vodafone-qr.jpg" alt="Vodafone Cash QR Code">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+  <div class="section-label">Follow Us</div>
+
+  <div class="social-row">
+
+    <div class="social-card">
+      <div class="social-name">TikTok</div>
+      <a class="social-link"
+         href="https://www.tiktok.com/@mhalim5030?_r=1&_t=ZS-97ppYDa4ezk"
+         target="_blank" rel="noopener noreferrer">Visit Page</a>
+      <div class="qr-wrap">
+        <img src="tiktok-qr.jpg" alt="TikTok QR Code">
+      </div>
+    </div>
+
+    <div class="social-card">
+      <div class="social-name">WhatsApp</div>
+      <a class="social-link"
+         href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"
+         target="_blank" rel="noopener noreferrer">Join Group</a>
+      <div class="qr-wrap">
+        <img src="whatsapp-qr.jpg" alt="WhatsApp QR Code">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">TAG · MEN'S WEAR</div>
+    <div class="footer-heart">♥</div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Copied</div>
+
+<script src="script.js"></script>
+</body>
+</html>
