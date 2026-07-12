@@ -16,7 +16,20 @@
 <div class="page">
 
   <div class="hero">
-    <img src="logo.jpg" alt="TAG Store" class="logo-img">
+    <svg class="hero-mark" viewBox="0 0 100 70" aria-hidden="true">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e8d4a0"/>
+          <stop offset="55%" stop-color="#c9a96e"/>
+          <stop offset="100%" stop-color="#a8875a"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#goldGrad)" d="M8 58 L2 24 L22 38 L34 12 L50 30 L66 12 L78 38 L98 24 L92 58 Z"/>
+      <circle cx="50" cy="30" r="3.4" fill="url(#goldGrad)"/>
+      <circle cx="34" cy="12" r="3" fill="url(#goldGrad)"/>
+      <circle cx="66" cy="12" r="3" fill="url(#goldGrad)"/>
+      <rect x="6" y="58" width="88" height="7" rx="2" fill="url(#goldGrad)"/>
+    </svg>
     <div class="brand">TAG STORE</div>
     <div class="sub">Men's Wear</div>
   </div>
@@ -35,7 +48,7 @@
     </div>
 
     <div class="card">
-      <div class="card-icon">Etisalat</div>
+      <div class="card-icon">Etisalat Cash</div>
       <div class="card-name">Abo Malika</div>
       <div class="card-number">0111 696 3100</div>
       <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
@@ -51,7 +64,7 @@
     </div>
 
     <div class="card">
-      <div class="card-icon">Vodafone</div>
+      <div class="card-icon">Vodafone Cash</div>
       <div class="card-name">Halim</div>
       <div class="card-number">0100 046 2112</div>
       <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>

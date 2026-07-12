@@ -96,8 +96,8 @@ function renderUnifiedQRCodes() {
       text: value,
       width: 300,
       height: 300,
-      colorDark: '#111111',
-      colorLight: '#ffffff',
+      colorDark: '#1c1712',
+      colorLight: '#f6f0e4',
       correctLevel: QRCode.CorrectLevel.M
     });
   });
