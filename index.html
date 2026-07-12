@@ -1,108 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TAG STORE – Payment Page</title>
-<meta name="description" content="TAG STORE – Men's Wear Payment Page">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAG STORE – Payment Page</title>
+  <meta name="description" content="TAG STORE – Men's Wear Payment Page">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="bg-pattern"></div>
+<div class="watermark" aria-hidden="true"></div>
 
-  <main class="page">
+<div class="page">
 
-    <!-- ===== Brand ===== -->
-    <header class="brand">
-      <svg class="crown" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M4 34 L4 14 L16 24 L30 4 L44 24 L56 14 L56 34 Z"
-              fill="none" stroke="currentColor" stroke-width="2.2"
-              stroke-linejoin="round" stroke-linecap="round"/>
-        <circle cx="4" cy="10" r="2.6" fill="currentColor"/>
-        <circle cx="30" cy="4" r="3" fill="currentColor"/>
-        <circle cx="56" cy="10" r="2.6" fill="currentColor"/>
-      </svg>
-      <h1 class="brand-name">TAG STORE</h1>
-      <p class="brand-sub">MEN'S WEAR</p>
-      <span class="dot"></span>
-    </header>
+  <div class="hero">
+    <svg class="hero-mark" viewBox="0 0 100 70" aria-hidden="true">
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#e8d4a0"/>
+          <stop offset="55%" stop-color="#c9a96e"/>
+          <stop offset="100%" stop-color="#a8875a"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#goldGrad)" d="M8 58 L2 24 L22 38 L34 12 L50 30 L66 12 L78 38 L98 24 L92 58 Z"/>
+      <circle cx="50" cy="30" r="3.4" fill="url(#goldGrad)"/>
+      <circle cx="34" cy="12" r="3" fill="url(#goldGrad)"/>
+      <circle cx="66" cy="12" r="3" fill="url(#goldGrad)"/>
+      <rect x="6" y="58" width="88" height="7" rx="2" fill="url(#goldGrad)"/>
+    </svg>
+    <div class="brand">TAG STORE</div>
+    <div class="sub">Men's Wear</div>
+  </div>
 
-    <!-- ===== Payment Methods ===== -->
-    <section class="section" aria-labelledby="methods-heading">
-      <h2 id="methods-heading" class="section-label">Payment Methods</h2>
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+  <div class="section-label">Payment Methods</div>
 
-      <div class="ticket-grid">
+  <div class="cards">
 
-        <article class="ticket">
-          <p class="ticket-label">Instapay</p>
-          <p class="ticket-name">Abo Malika</p>
-          <p class="ticket-num" data-number="01116963100">0111 696 3100</p>
-          <button class="copy-btn" data-copy="01116963100" type="button">Copy</button>
-          <img src="card1-instapay-qr.jpg" alt="Instapay QR Code" class="ticket-qr">
-        </article>
+    <div class="card">
+      <div class="card-icon">Instapay</div>
+      <div class="card-name">Abo Malika</div>
+      <div class="card-number">0111 696 3100</div>
+      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card1" data-qr-value="https://ipn.eg/C/Q/nanazk10/instapay?ISIGN=23052603MEYCIQCYrjBTCczMKdMkpHNQySC0kUE2ngdnwHIAKIvqkd5AKQIhAJANmrsh/itN1nAPVl61PwzpKVlP2hrtXcZrAY5uPeQr"></div>
+    </div>
 
-        <article class="ticket">
-          <p class="ticket-label">Etisalat Cash</p>
-          <p class="ticket-name">Abo Malika</p>
-          <p class="ticket-num" data-number="01116963100">0111 696 3100</p>
-          <button class="copy-btn" data-copy="01116963100" type="button">Copy</button>
-          <img src="card2-etisalat-qr.jpg" alt="Etisalat Cash QR Code" class="ticket-qr">
-        </article>
+    <div class="card">
+      <div class="card-icon">Etisalat Cash</div>
+      <div class="card-name">Abo Malika</div>
+      <div class="card-number">0111 696 3100</div>
+      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card2" data-qr-value="https://app.etisalat.eg/?appScreens=cash&amp;appScreen=cash&amp;extra=screenId:send_money;dial:01116963100"></div>
+    </div>
 
-        <article class="ticket">
-          <p class="ticket-label">Instapay</p>
-          <p class="ticket-name">Halim</p>
-          <p class="ticket-num" data-number="01000462112">0100 046 2112</p>
-          <button class="copy-btn" data-copy="01000462112" type="button">Copy</button>
-          <img src="card3-instapay-qr.jpg" alt="Instapay QR Code" class="ticket-qr">
-        </article>
+    <div class="card">
+      <div class="card-icon">Instapay</div>
+      <div class="card-name">Halim</div>
+      <div class="card-number">0100 046 2112</div>
+      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card3" data-qr-value="https://ipn.eg/C/Q/m.halim5030gmail.com/instapay?ISIGN=23052601MEUCIQCR8my3ban6a1oAQisJlQMGYkxfizKMH4RMrrQ5gEe+egIgVxvntx8xqs9usF8ctqj1nxtBuBtlK5tlvnE9yQwhpZ8="></div>
+    </div>
 
-        <article class="ticket">
-          <p class="ticket-label">Vodafone Cash</p>
-          <p class="ticket-name">Halim</p>
-          <p class="ticket-num" data-number="01000462112">0100 046 2112</p>
-          <button class="copy-btn" data-copy="01000462112" type="button">Copy</button>
-          <img src="card4-vodafone-qr.jpg" alt="Vodafone Cash QR Code" class="ticket-qr">
-        </article>
+    <div class="card">
+      <div class="card-icon">Vodafone Cash</div>
+      <div class="card-name">Halim</div>
+      <div class="card-number">0100 046 2112</div>
+      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
+      <div class="qr-wrap" id="qr-card4" data-qr-value="http://vf.eg/vfcash?id=mt&amp;qrId=a2iaIT&amp;qrString=df1be5b521c0e47448c8f43f341eccb5e92b1c232f917dcedaef7da22ba10699"></div>
+    </div>
 
-      </div>
-    </section>
+  </div>
 
-    <span class="dot"></span>
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+  <div class="section-label">Follow Us</div>
 
-    <!-- ===== Follow Us ===== -->
-    <section class="section" aria-labelledby="follow-heading">
-      <h2 id="follow-heading" class="section-label">Follow Us</h2>
+  <div class="social-row">
 
-      <div class="ticket-grid ticket-grid-2">
+    <div class="social-card">
+      <div class="social-name">TikTok</div>
+      <a class="social-link"
+         href="https://www.tiktok.com/@mhalim5030?_r=1&_t=ZS-97ppYDa4ezk"
+         target="_blank" rel="noopener noreferrer">Visit Page</a>
+      <div class="qr-wrap" id="qr-tiktok" data-qr-value="https://www.tiktok.com/@mhalim5030?_r=1&amp;_t=ZS-97ppYDa4ezk"></div>
+    </div>
 
-        <article class="ticket">
-          <p class="ticket-label">TikTok</p>
-          <a class="copy-btn" href="https://www.tiktok.com/@mhalim5030?_r=1&_t=ZS-97ppYDa4ezk" target="_blank" rel="noopener">Visit Page</a>
-          <img src="tiktok-qr.jpg" alt="TAG STORE TikTok QR Code" class="ticket-qr">
-        </article>
+    <div class="social-card">
+      <div class="social-name">WhatsApp</div>
+      <a class="social-link"
+         href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"
+         target="_blank" rel="noopener noreferrer">Join Group</a>
+      <div class="qr-wrap" id="qr-whatsapp" data-qr-value="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"></div>
+    </div>
 
-        <article class="ticket">
-          <p class="ticket-label">WhatsApp</p>
-          <a class="copy-btn" href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t" target="_blank" rel="noopener">Join Group</a>
-          <img src="whatsapp-qr.jpg" alt="TAG STORE WhatsApp Group QR Code" class="ticket-qr">
-        </article>
+  </div>
 
-      </div>
-    </section>
+  <div class="footer">
+    <div class="footer-brand">TAG · MEN'S WEAR</div>
+    <div class="footer-heart">♥</div>
+  </div>
 
-    <!-- ===== Footer ===== -->
-    <footer class="footer">
-      <p class="footer-text">TAG &middot; MEN'S WEAR</p>
-      <span class="dot"></span>
-    </footer>
+</div>
 
-  </main>
+<div class="toast" id="toast">Copied</div>
 
-  <!-- Toast -->
-  <div id="toast" class="toast" role="status" aria-live="polite">Copied</div>
-
-  <script src="script.js"></script>
+<script src="qrcode.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
