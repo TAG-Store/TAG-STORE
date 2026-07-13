@@ -6,18 +6,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
 
 :root {
-  /* ---- Color tokens ---- */
+  /* ---- Color tokens: disciplined 3-tone system ---- */
   --bg-0: #050505;
   --bg-1: #0d0d0d;
   --bg-2: #131313;
   --card-bg: #111111;
-  --card-border: #222222;
-  --gold: #c9a96e;
-  --gold-light: #ddc190;
-  --gold-soft: rgba(201, 169, 110, 0.35);
-  --gold-dim: rgba(201, 169, 110, 0.14);
-  --text-main: #f2f0ea;
-  --text-muted: #7a7a7a;
+  --card-border: #262523;
+
+  --white: #f7f5f1;      /* primary text: names, brand */
+  --gold: #c9a24a;       /* accent: numbers, buttons, borders, links */
+  --gold-dim: rgba(201, 162, 74, 0.16); /* gold used only for faint glows/shadows */
+  --gray: #8a8a86;       /* secondary text: labels, captions, muted */
+
   --qr-frame: #f6f0e4;
   --qr-dark: #1c1712;
 
@@ -39,7 +39,7 @@ body {
   position: relative;
   background:
     radial-gradient(circle at 50% 0%, var(--bg-2), var(--bg-1) 45%, var(--bg-0) 100%);
-  color: var(--text-main);
+  color: var(--white);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -86,7 +86,7 @@ body {
   font-size: 42px;
   font-weight: 700;
   letter-spacing: 8px;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 4px;
   line-height: 1;
 }
@@ -128,7 +128,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 4px;
-  color: var(--text-muted);
+  color: var(--gray);
   text-align: center;
   margin-bottom: 1.4rem;
   text-transform: uppercase;
@@ -164,12 +164,12 @@ body {
   left: 0;
   right: 0;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
 }
 
 .card:hover {
   transform: translateY(-3px);
-  border-color: var(--gold-soft);
+  border-color: var(--gold-dim);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
 }
 
@@ -178,7 +178,7 @@ body {
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.4px;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 10px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -187,7 +187,7 @@ body {
 .card-name {
   font-size: 13px;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   margin-bottom: 6px;
 }
 
@@ -206,7 +206,7 @@ body {
   overflow: hidden;
   width: 100%;
   background: transparent;
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--gold-dim);
   border-radius: 8px;
   padding: 9px 0;
   font-family: var(--font-body);
@@ -262,6 +262,7 @@ body {
   border: 1.5px solid var(--gold);
   aspect-ratio: 1;
   padding: 18px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,9 +270,24 @@ body {
   transition: box-shadow 0.25s ease;
 }
 
+.qr-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 21%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid var(--qr-frame);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
 .card:hover .qr-wrap,
 .social-card:hover .qr-wrap {
-  box-shadow: 0 0 0 1px var(--gold-soft), 0 0 22px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 1px var(--gold-dim), 0 0 22px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
 }
 
 .qr-wrap canvas,
@@ -289,7 +305,7 @@ body {
   text-align: center;
   font-size: 10px;
   letter-spacing: 2px;
-  color: var(--text-muted);
+  color: var(--gray);
   text-transform: uppercase;
 }
 
@@ -316,13 +332,13 @@ body {
   content: '';
   display: block;
   height: 1.5px;
-  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
   margin: -1.1rem -1.1rem 14px;
 }
 
 .social-card:hover {
   transform: translateY(-3px);
-  border-color: var(--gold-soft);
+  border-color: var(--gold-dim);
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
 }
 
@@ -331,7 +347,7 @@ body {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 3px;
-  color: var(--text-muted);
+  color: var(--gray);
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -339,7 +355,7 @@ body {
 .social-link {
   display: block;
   background: transparent;
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--gold-dim);
   border-radius: 8px;
   padding: 9px 0;
   font-family: var(--font-body);
@@ -370,7 +386,7 @@ body {
   font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: 6px;
-  color: #8c795a;
+  color: var(--gold);
 }
 
 .footer-heart {
