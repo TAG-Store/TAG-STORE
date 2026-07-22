@@ -86,14 +86,14 @@ function attachRipple(el) {
    (H) keeps the code fully scannable with the badge in place. */
 
 var QR_BADGES = {
-  'qr-card1': { bg: '#6b21a8', icon:
-    '<svg viewBox="0 0 24 24" width="60%" height="60%"><path fill="#ffffff" d="M4 16 L13 6 L13 11 L20 11 L11 21 L11 16 Z"/></svg>' },
+  'qr-card1': { bg: 'linear-gradient(135deg,#7b2ff7,#f97316)', icon:
+    '<span style="font-family:Arial,sans-serif;font-weight:800;font-size:13px;color:#fff;letter-spacing:0.02em;">IP</span>' },
   'qr-card2': { bg: '#e30613', icon:
     '<span style="font-family:Georgia,serif;font-weight:700;font-size:15px;color:#fff;letter-spacing:0;">e&amp;</span>' },
-  'qr-card3': { bg: '#6b21a8', icon:
-    '<svg viewBox="0 0 24 24" width="60%" height="60%"><path fill="#ffffff" d="M4 16 L13 6 L13 11 L20 11 L11 21 L11 16 Z"/></svg>' },
+  'qr-card3': { bg: 'linear-gradient(135deg,#7b2ff7,#f97316)', icon:
+    '<span style="font-family:Arial,sans-serif;font-weight:800;font-size:13px;color:#fff;letter-spacing:0.02em;">IP</span>' },
   'qr-card4': { bg: '#e60000', icon:
-    '<svg viewBox="0 0 24 24" width="62%" height="62%"><path fill="#ffffff" d="M12 3C7 3 3 7.4 3 13.2c0 3.6 2.1 6.2 4.9 7.5-.1-1-.2-2.6.1-3.7.2-1 1.6-6.7 1.6-6.7s-.4-.8-.4-2c0-1.9 1.1-3.3 2.4-3.3 1.1 0 1.7.9 1.7 1.9 0 1.2-.7 2.9-1.1 4.6-.3 1.3.6 2.4 1.9 2.4 2.3 0 3.9-3 3.9-6.5 0-2.7-1.8-4.7-5.1-4.7-3.7 0-6 2.8-6 5.9 0 1.1.3 1.8.8 2.4.2.3.3.4.2.7-.1.2-.2.8-.3 1-.1.3-.3.4-.6.3-1.7-.7-2.5-2.6-2.5-4.7 0-3.5 2.9-7.6 8.7-7.6 4.6 0 7.7 3.3 7.7 6.9 0 4.7-2.6 8.2-6.4 8.2-1.3 0-2.5-.7-2.9-1.5 0 0-.7 2.7-.8 3.2-.3 1-.9 2-1.4 2.8 1.1.3 2.2.5 3.4.5 5.5 0 10-4.4 10-9.9C22 7.5 17.5 3 12 3z"/></svg>' },
+    '<svg viewBox="0 0 24 24" width="60%" height="60%"><path fill="#ffffff" d="M12 5c1.7 0 3 1.3 3 3 0 .6-.2 1.2-.5 1.7 2.6.9 4.5 3.4 4.5 6.3h-2c0-2.5-1.8-4.5-4.2-4.9-.4 1.7-1.9 3-3.8 3-2.2 0-4-1.8-4-4 0-2.1 1.6-3.8 3.6-4-.2-.4-.3-.8-.3-1.1 0-2 1.7-3 3.7-3-.3.9.5 2 1 3z"/></svg>' },
   'qr-tiktok': { bg: '#010101', icon:
     '<svg viewBox="0 0 48 48" width="58%" height="58%"><path fill="#fff" d="M33.5 6c.9 4.6 3.9 7.6 8.5 8v6.4c-3 .3-5.7-.6-8.5-2.2v13.6c0 8.4-9.1 13.7-16.4 9.7-4.8-2.6-6.9-8.5-4.7-13.6 2-4.7 7.4-7.3 12.3-6v6.7c-2.1-.7-4.5.2-5.5 2.2-1.1 2.2-.1 4.9 2.1 6 2.4 1.2 5.3-.2 5.9-2.8.1-.6.2-1.4.2-2.1V6h6.1z"/></svg>' },
   'qr-whatsapp': { bg: '#25d366', icon:
