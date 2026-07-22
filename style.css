@@ -16,7 +16,7 @@
   --white: #f7f5f1;      /* primary text: names, brand */
   --gold: #c9a24a;       /* accent: numbers, buttons, borders, links */
   --gold-dim: rgba(201, 162, 74, 0.16); /* gold used only for faint glows/shadows */
-  --gray: #8a8a86;       /* secondary text: labels, captions, muted */
+  --gray: #9c9c97;       /* secondary text: labels, captions, muted */
 
   --qr-frame: #f6f0e4;
   --qr-dark: #1c1712;
@@ -375,6 +375,95 @@ body {
 }
 
 /* ---- Footer ---- */
+.trust-badge {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+/* ---- How to Pay steps ---- */
+.steps {
+  list-style: none;
+  max-width: 400px;
+  margin: 0 auto 1.4rem;
+  padding: 0;
+}
+
+.steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #1c1c1c;
+}
+
+.steps li:last-child {
+  border-bottom: none;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.step-text strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---- Support / WhatsApp proof button ---- */
+.support-btn {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto 1.2rem;
+  text-align: center;
+  background: var(--gold);
+  color: #0a0a0a;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 13px 16px;
+  border-radius: 10px;
+  transition: opacity 0.25s ease;
+}
+
+.support-btn:hover {
+  opacity: 0.88;
+}
+
+/* ---- Policy note ---- */
+.policy-note {
+  max-width: 400px;
+  margin: 0 auto 1.6rem;
+  text-align: center;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--gray);
+}
+
 .footer {
   text-align: center;
   padding-top: 2.5rem;
