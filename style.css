@@ -1,0 +1,438 @@
+/* =============================================
+   TAG STORE — style.css
+   Dark Luxury Theme v2 — unified card/QR system
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+
+:root {
+  /* ---- Color tokens: disciplined 3-tone system ---- */
+  --bg-0: #050505;
+  --bg-1: #0d0d0d;
+  --bg-2: #131313;
+  --card-bg: #111111;
+  --card-border: #262523;
+
+  --white: #f7f5f1;      /* primary text: names, brand */
+  --gold: #c9a24a;       /* accent: numbers, buttons, borders, links */
+  --gold-dim: rgba(201, 162, 74, 0.16); /* gold used only for faint glows/shadows */
+  --gray: #8a8a86;       /* secondary text: labels, captions, muted */
+
+  --qr-frame: #f6f0e4;
+  --qr-dark: #1c1712;
+
+  /* ---- Type tokens ---- */
+  --font-display: 'Bebas Neue', 'Tajawal', sans-serif;
+  --font-body: 'Montserrat', 'Tajawal', sans-serif;
+  --font-arabic: 'Tajawal', 'Cairo', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { background: var(--bg-0); }
+
+body {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 0%, var(--bg-2), var(--bg-1) 45%, var(--bg-0) 100%);
+  color: var(--white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ---- Watermark layer (fixed, tiled, drawn in the site's own vector style) ---- */
+.watermark {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 70'%3E%3Cpath d='M8 58 L2 24 L22 38 L34 12 L50 30 L66 12 L78 38 L98 24 L92 58 Z' fill='none' stroke='%23c9a96e' stroke-width='3'/%3E%3Crect x='6' y='58' width='88' height='7' rx='2' fill='none' stroke='%23c9a96e' stroke-width='3'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px;
+  opacity: 0.07;
+}
+
+/* ---- Page wrapper ---- */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* ---- Hero ---- */
+.hero {
+  text-align: center;
+  padding: 2.5rem 0 2rem;
+}
+
+.hero-mark {
+  width: 68px;
+  height: auto;
+  margin: 0 auto 1.1rem;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(201, 169, 110, 0.25));
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  color: var(--white);
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ---- Divider ---- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.8rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, #333, transparent);
+}
+
+.divider-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ---- Section label ---- */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 1.4rem;
+  text-transform: uppercase;
+}
+
+/* ---- Payment cards grid ---- */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+
+/* ---- Card (all cards share identical box model) ---- */
+.card {
+  height: 100%;
+  background: var(--card-bg);
+  border: 0.5px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-dim);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
+}
+
+.card-icon {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: var(--gold);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.card-number {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+/* ---- Copy button (gold outline → gold fill on hover) ---- */
+.copy-btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 9px 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.copy-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
+}
+
+.copy-btn:active {
+  opacity: 0.85;
+}
+
+.copy-btn.copied {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
+}
+
+/* Ripple effect element injected by script.js */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-anim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* ---- QR wrap: unified white frame + gold border for every code ---- */
+.qr-wrap {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--qr-frame);
+  border: 1.5px solid var(--gold);
+  aspect-ratio: 1;
+  padding: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s ease;
+}
+
+.qr-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 21%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 3px solid var(--qr-frame);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.card:hover .qr-wrap,
+.social-card:hover .qr-wrap {
+  box-shadow: 0 0 0 1px var(--gold-dim), 0 0 22px var(--gold-dim), 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+.qr-wrap canvas,
+.qr-wrap img,
+.qr-wrap table {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border-radius: 4px;
+  image-rendering: pixelated;
+}
+
+.qr-caption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gray);
+  text-transform: uppercase;
+}
+
+/* ---- Social row ---- */
+.social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.social-card {
+  height: 100%;
+  background: var(--card-bg);
+  border: 0.5px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-card::before {
+  content: '';
+  display: block;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  margin: -1.1rem -1.1rem 14px;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-dim);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--gold-dim);
+}
+
+.social-name {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--gray);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.social-link {
+  display: block;
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  border-radius: 8px;
+  padding: 9px 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #0a0a0a;
+}
+
+/* ---- Footer ---- */
+.footer {
+  text-align: center;
+  padding-top: 2.5rem;
+  border-top: 0.5px solid #1a1a1a;
+  margin-top: 2rem;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 6px;
+  color: var(--gold);
+}
+
+.footer-heart {
+  color: var(--gold);
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+/* ---- Toast ---- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--gold);
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .card, .social-card, .copy-btn, .social-link, .qr-wrap, .toast {
+    transition: none !important;
+  }
+  .ripple {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* ---- Small screens ---- */
+@media (max-width: 360px) {
+  .brand { font-size: 34px; letter-spacing: 6px; }
+  .card-number { font-size: 18px; }
+}
