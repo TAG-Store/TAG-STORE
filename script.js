@@ -115,6 +115,12 @@ function renderUnifiedQRCodes() {
     console.warn('QRCode library not loaded — check qrcode.js include.');
     return;
   }
+  // The "scan to open this page" QR always points to wherever the site is live
+  var siteQR = document.getElementById('qr-site');
+  if (siteQR) {
+    siteQR.setAttribute('data-qr-value', window.location.href);
+  }
+
   var wraps = document.querySelectorAll('.qr-wrap[data-qr-value]');
   wraps.forEach(function (wrap) {
     var value = wrap.getAttribute('data-qr-value');
