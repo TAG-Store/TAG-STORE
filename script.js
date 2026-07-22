@@ -140,6 +140,13 @@ function renderUnifiedQRCodes() {
 document.addEventListener('DOMContentLoaded', function () {
   renderUnifiedQRCodes();
 
+  var copySiteBtn = document.getElementById('copy-site-link');
+  if (copySiteBtn) {
+    copySiteBtn.addEventListener('click', function () {
+      copyNumber(window.location.href, copySiteBtn);
+    });
+  }
+
   document.querySelectorAll('.copy-btn, .social-link').forEach(function (el) {
     attachRipple(el);
   });
