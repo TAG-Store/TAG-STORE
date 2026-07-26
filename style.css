@@ -147,18 +147,11 @@ body{
 .qr-box{
   width:104px;height:104px;flex-shrink:0;
   background:#f2f1ec;
-  border-radius:2px;
+  border-radius:8px;
   position:relative;
   overflow:hidden;
 }
-.qr-box canvas,.qr-box img{width:100% !important;height:100% !important;}
-.qr-badge{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:22px;height:22px;border-radius:50%;
-  border:2px solid #f2f1ec;
-  display:flex;align-items:center;justify-content:center;
-  font-size:7px;font-weight:800;color:#fff;
-}
+.qr-box canvas,.qr-box img,.qr-box svg{width:100% !important;height:100% !important;}
 .qr-caption{font-size:10.5px;color:var(--gray);letter-spacing:0.03em;line-height:1.5;max-width:180px;}
 
 /* ---- Follow / Share as quiet text links, not cards ---- */
