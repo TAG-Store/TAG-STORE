@@ -1,136 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TAG STORE – Payment Page</title>
-  <meta name="description" content="TAG STORE – Men's Wear Payment Page">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAG — Editorial Black</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="watermark" aria-hidden="true"></div>
-
+<div class="watermark"></div>
 <div class="page">
 
-  <div class="hero">
-    <svg class="hero-mark" viewBox="0 0 100 70" aria-hidden="true">
-      <defs>
-        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#e8d4a0"/>
-          <stop offset="55%" stop-color="#c9a96e"/>
-          <stop offset="100%" stop-color="#a8875a"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#goldGrad)" d="M8 58 L2 24 L22 38 L34 12 L50 30 L66 12 L78 38 L98 24 L92 58 Z"/>
-      <circle cx="50" cy="30" r="3.4" fill="url(#goldGrad)"/>
-      <circle cx="34" cy="12" r="3" fill="url(#goldGrad)"/>
-      <circle cx="66" cy="12" r="3" fill="url(#goldGrad)"/>
-      <rect x="6" y="58" width="88" height="7" rx="2" fill="url(#goldGrad)"/>
-    </svg>
-    <div class="brand">TAG STORE</div>
-    <div class="sub">Men's Wear</div>
-    <div class="trust-badge">🔒 Secure Manual Payment</div>
+  <div class="hero reveal" style="animation-delay:.05s">
+    <div class="kicker">Men's Wear — Payment</div>
+    <div class="wordmark">Tag <strong>Store</strong></div>
+    <div class="hero-sub">Secure Manual Payment</div>
   </div>
 
-  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-  <div class="section-label">Payment Methods</div>
-
-  <div class="cards">
-
-    <div class="card">
-      <div class="card-icon">Instapay</div>
-      <div class="card-name">Abo Malika</div>
-      <div class="card-number">0111 696 3100</div>
-      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
-      <div class="qr-wrap" id="qr-card1" data-qr-value="https://ipn.eg/C/Q/nanazk10/instapay?ISIGN=23052603MEYCIQCYrjBTCczMKdMkpHNQySC0kUE2ngdnwHIAKIvqkd5AKQIhAJANmrsh/itN1nAPVl61PwzpKVlP2hrtXcZrAY5uPeQr"></div>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">Etisalat Cash</div>
-      <div class="card-name">Abo Malika</div>
-      <div class="card-number">0111 696 3100</div>
-      <button class="copy-btn" onclick="copyNumber('01116963100', this)">Copy</button>
-      <div class="qr-wrap" id="qr-card2" data-qr-value="https://app.etisalat.eg/?appScreens=cash&amp;appScreen=cash&amp;extra=screenId:send_money;dial:01116963100"></div>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">Instapay</div>
-      <div class="card-name">Halim</div>
-      <div class="card-number">0100 046 2112</div>
-      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
-      <div class="qr-wrap" id="qr-card3" data-qr-value="https://ipn.eg/C/Q/m.halim5030gmail.com/instapay?ISIGN=23052601MEUCIQCR8my3ban6a1oAQisJlQMGYkxfizKMH4RMrrQ5gEe+egIgVxvntx8xqs9usF8ctqj1nxtBuBtlK5tlvnE9yQwhpZ8="></div>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">Vodafone Cash</div>
-      <div class="card-name">Halim</div>
-      <div class="card-number">0100 046 2112</div>
-      <button class="copy-btn" onclick="copyNumber('01000462112', this)">Copy</button>
-      <div class="qr-wrap" id="qr-card4" data-qr-value="http://vf.eg/vfcash?id=mt&amp;qrId=a2iaIT&amp;qrString=df1be5b521c0e47448c8f43f341eccb5e92b1c232f917dcedaef7da22ba10699"></div>
-    </div>
-
+  <div class="section-head reveal" style="animation-delay:.15s">
+    <h2>Payment</h2>
+    <span class="section-count">04 methods</span>
   </div>
 
-  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-  <div class="section-label">How to Pay</div>
-
-  <ol class="steps">
-    <li><span class="step-num">1</span><span class="step-text">Choose a payment method above and transfer the exact order amount.</span></li>
-    <li><span class="step-num">2</span><span class="step-text">Take a screenshot of the payment confirmation.</span></li>
-    <li><span class="step-num">3</span><span class="step-text">Send the screenshot with your <strong>name and order details</strong> to our WhatsApp below.</span></li>
-    <li><span class="step-num">4</span><span class="step-text">We'll confirm your order once payment is verified.</span></li>
-  </ol>
-
-  <a class="support-btn" href="https://wa.me/201000462112" target="_blank" rel="noopener noreferrer">
-    Send Payment Proof on WhatsApp
-  </a>
-
-  <p class="policy-note">Need a different size or color? Exchanges accepted within 3 days — just message us on WhatsApp.</p>
-
-  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-  <div class="section-label">Follow Us</div>
-
-  <div class="social-row">
-
-    <div class="social-card">
-      <div class="social-name">TikTok</div>
-      <a class="social-link"
-         href="https://www.tiktok.com/@mhalim5030?_r=1&_t=ZS-97ppYDa4ezk"
-         target="_blank" rel="noopener noreferrer">Visit Page</a>
-      <div class="qr-wrap" id="qr-tiktok" data-qr-value="https://www.tiktok.com/@mhalim5030?_r=1&amp;_t=ZS-97ppYDa4ezk"></div>
+  <div class="method reveal" style="animation-delay:.2s">
+    <div class="method-top">
+      <div class="method-info">
+        <div class="method-kicker">Instapay</div>
+        <div class="method-name">Abo Malika</div>
+      </div>
+      <div class="method-number">0111 696 3100</div>
     </div>
-
-    <div class="social-card">
-      <div class="social-name">WhatsApp</div>
-      <a class="social-link"
-         href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"
-         target="_blank" rel="noopener noreferrer">Join Group</a>
-      <div class="qr-wrap" id="qr-whatsapp" data-qr-value="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ?mode=gi_t"></div>
-    </div>
-
-  </div>
-
-  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-  <div class="section-label">Share This Page</div>
-
-  <div class="social-row" style="grid-template-columns: 1fr; max-width: 200px; margin: 0 auto;">
-    <div class="social-card">
-      <div class="social-name">Scan or Copy Link</div>
-      <button class="copy-btn" id="copy-site-link" type="button">Copy Link</button>
-      <div class="qr-wrap" id="qr-site" data-qr-value=""></div>
+    <div class="method-bottom">
+      <div class="qr-box" id="qr-1" data-qr="https://ipn.eg/C/Q/nanazk10/instapay" data-bg="linear-gradient(135deg,#7b2ff7,#f97316)" data-t="IP"></div>
+      <div class="qr-meta">
+        <div class="qr-caption">Scan with the Instapay app to pay instantly.</div>
+        <button class="btn" onclick="copyText('01116963100')">Copy Number</button>
+      </div>
     </div>
   </div>
 
-  <div class="footer">
-    <div class="footer-brand">TAG · MEN'S WEAR</div>
-    <div class="footer-heart">♥</div>
+  <div class="method reveal" style="animation-delay:.25s">
+    <div class="method-top">
+      <div class="method-info">
+        <div class="method-kicker">Etisalat Cash</div>
+        <div class="method-name">Abo Malika</div>
+      </div>
+      <div class="method-number">0111 696 3100</div>
+    </div>
+    <div class="method-bottom">
+      <div class="qr-box" id="qr-2" data-qr="https://app.etisalat.eg/?dial=01116963100" data-bg="#e30613" data-t="e&amp;"></div>
+      <div class="qr-meta">
+        <div class="qr-caption">Scan to open Etisalat Cash and send instantly.</div>
+        <button class="btn" onclick="copyText('01116963100')">Copy Number</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="method reveal" style="animation-delay:.3s">
+    <div class="method-top">
+      <div class="method-info">
+        <div class="method-kicker">Instapay</div>
+        <div class="method-name">Halim</div>
+      </div>
+      <div class="method-number">0100 046 2112</div>
+    </div>
+    <div class="method-bottom">
+      <div class="qr-box" id="qr-3" data-qr="https://ipn.eg/C/Q/m.halim5030gmail.com/instapay" data-bg="linear-gradient(135deg,#7b2ff7,#f97316)" data-t="IP"></div>
+      <div class="qr-meta">
+        <div class="qr-caption">Scan with the Instapay app to pay instantly.</div>
+        <button class="btn" onclick="copyText('01000462112')">Copy Number</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="method reveal" style="animation-delay:.35s">
+    <div class="method-top">
+      <div class="method-info">
+        <div class="method-kicker">Vodafone Cash</div>
+        <div class="method-name">Halim</div>
+      </div>
+      <div class="method-number">0100 046 2112</div>
+    </div>
+    <div class="method-bottom">
+      <div class="qr-box" id="qr-4" data-qr="http://vf.eg/vfcash?id=mt" data-bg="#e60000" data-t="V"></div>
+      <div class="qr-meta">
+        <div class="qr-caption">Scan to open Vodafone Cash and send instantly.</div>
+        <button class="btn" onclick="copyText('01000462112')">Copy Number</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal" style="animation-delay:.4s;margin-top:56px;">
+    <h2>Follow</h2>
+    <span class="section-count">02</span>
+  </div>
+
+  <div class="link-row reveal" style="animation-delay:.45s">
+    <div>
+      <div class="link-name">TikTok</div>
+      <div class="link-sub">@mhalim5030</div>
+    </div>
+    <a class="btn" href="https://www.tiktok.com/@mhalim5030" target="_blank">Visit</a>
+  </div>
+  <div class="link-row reveal" style="animation-delay:.5s">
+    <div>
+      <div class="link-name">WhatsApp Group</div>
+      <div class="link-sub">Community group</div>
+    </div>
+    <a class="btn" href="https://chat.whatsapp.com/KIsJklBeb3237V4XMBPYWQ" target="_blank">Join</a>
+  </div>
+
+  <div class="section-head reveal" style="animation-delay:.55s;margin-top:56px;">
+    <h2>Contact</h2>
+    <span class="section-count">02</span>
+  </div>
+
+  <div class="link-row reveal" style="animation-delay:.6s">
+    <div>
+      <div class="link-name">Call Us</div>
+      <div class="link-sub">0100 046 2112</div>
+    </div>
+    <a class="btn" href="tel:+201000462112">Call</a>
+  </div>
+  <div class="link-row reveal" style="animation-delay:.65s">
+    <div>
+      <div class="link-name">WhatsApp Chat</div>
+      <div class="link-sub">0100 046 2112</div>
+    </div>
+    <a class="btn" href="https://wa.me/201000462112" target="_blank">Chat</a>
+  </div>
+
+  <div class="section-head reveal" style="animation-delay:.7s;margin-top:56px;">
+    <h2>Share</h2>
+    <span class="section-count">01</span>
+  </div>
+
+  <div class="link-row reveal" style="animation-delay:.75s">
+    <div>
+      <div class="link-name">Share this page</div>
+      <div class="link-sub">Copy the link to send</div>
+    </div>
+    <button class="btn" onclick="copyText(window.location.href)">Copy</button>
+  </div>
+
+  <div class="footer reveal" style="animation-delay:.85s">
+    <div class="footer-mark">Tag · Men's Wear</div>
   </div>
 
 </div>
-
 <div class="toast" id="toast">Copied</div>
 
 <script src="qrcode.js"></script>
