@@ -134,12 +134,20 @@
     <span class="section-count">01</span>
   </div>
 
-  <div class="link-row reveal" style="animation-delay:.75s">
-    <div>
-      <div class="link-name">Share this page</div>
-      <div class="link-sub">Copy the link to send</div>
+  <div class="method reveal" style="animation-delay:.75s">
+    <div class="method-top">
+      <div class="method-info">
+        <div class="method-kicker">Share</div>
+        <div class="method-name">This page</div>
+      </div>
     </div>
-    <button class="btn" onclick="copyText(window.location.href)">Copy</button>
+    <div class="method-bottom">
+      <div class="qr-box" id="qr-site" data-qr=""></div>
+      <div class="qr-meta">
+        <div class="qr-caption">Scan with any camera to open this page, or copy the link to send it.</div>
+        <button class="btn" onclick="copyText(window.location.href)">Copy Link</button>
+      </div>
+    </div>
   </div>
 
   <div class="footer reveal" style="animation-delay:.85s">

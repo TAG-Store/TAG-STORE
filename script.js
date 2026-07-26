@@ -13,9 +13,13 @@ function renderQR(qrId){
   var val=el.getAttribute('data-qr');
   new QRCode(el,{text:val,width:200,height:200,colorDark:'#141310',colorLight:'#f2f1ec',correctLevel:QRCode.CorrectLevel.H});
   var bg=el.getAttribute('data-bg'), t=el.getAttribute('data-t');
-  var b=document.createElement('div');b.className='qr-badge';b.style.background=bg;b.innerHTML=t;el.appendChild(b);
+  if(bg){
+    var b=document.createElement('div');b.className='qr-badge';b.style.background=bg;b.innerHTML=t;el.appendChild(b);
+  }
   rendered[qrId]=true;
 }
 document.addEventListener('DOMContentLoaded', function(){
-  ['qr-1','qr-2','qr-3','qr-4'].forEach(renderQR);
+  var siteQR = document.getElementById('qr-site');
+  if (siteQR) { siteQR.setAttribute('data-qr', window.location.href); }
+  ['qr-1','qr-2','qr-3','qr-4','qr-site'].forEach(renderQR);
 });
