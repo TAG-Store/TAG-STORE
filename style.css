@@ -222,11 +222,16 @@ body{
   .method-name{ color:#555 !important; }
   .method-number{ color:#111 !important; font-size:24px; }
 
-  .qr-box{ width:130px; height:130px; border:1px solid #ccc; border-radius:12px; padding:8px; box-shadow:none; }
-  .qr-caption{ color:#555 !important; }
+  .method-bottom{ flex-direction:column !important; align-items:center !important; gap:12px !important; }
+  .qr-meta{ align-items:center !important; text-align:center; }
 
-  /* Copy-to-clipboard has no meaning on paper */
-  .qr-meta .btn{ display:none !important; }
+  .qr-box{ width:220px; height:220px; border:1px solid #ccc; border-radius:14px; padding:12px; box-shadow:none; }
+  .qr-caption{ color:#555 !important; font-size:12px; }
+
+  /* Copy-to-clipboard has no meaning on paper — hidden with extra reinforcement */
+  .qr-meta .btn,
+  .method-bottom .btn,
+  button.btn{ display:none !important; visibility:hidden !important; height:0 !important; margin:0 !important; padding:0 !important; }
 
   .link-row{ border-color:#ccc !important; page-break-inside:avoid; }
   .link-name{ color:#111 !important; }
