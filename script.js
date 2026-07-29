@@ -14,6 +14,7 @@ function renderQR(qrId){
   var logo=el.getAttribute('data-logo');
 
   var opts={
+    type:'svg',
     width:200, height:200, data:val, margin:8,
     dotsOptions:{ type:'extra-rounded', color:'#c9a24a' },
     cornersSquareOptions:{ type:'extra-rounded', color:'#c9a24a' },
