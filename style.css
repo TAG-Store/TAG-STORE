@@ -146,15 +146,15 @@ body{
 
 .qr-box{
   width:160px;height:160px;flex-shrink:0;
-  background:#ede7d8;
-  border-radius:8px;
-  border:1px solid rgba(185,146,79,0.55);
-  box-shadow:0 4px 16px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(0,0,0,0.03);
+  background:transparent;
+  border-radius:0;
+  border:none;
+  box-shadow:none;
   position:relative;
   overflow:hidden;
   padding:0;
 }
-.qr-box canvas,.qr-box img,.qr-box svg{width:100% !important;height:100% !important;border-radius:8px;display:block;}
+.qr-box canvas,.qr-box img,.qr-box svg{width:100% !important;height:100% !important;border-radius:0;display:block;}
 .qr-caption{font-size:10.5px;color:var(--gray);letter-spacing:0.03em;line-height:1.5;max-width:180px;}
 
 .method-bottom-centered{
@@ -163,7 +163,7 @@ body{
   text-align:center;
 }
 .qr-box-large{
-  width:180px;height:180px;
+  width:220px;height:220px;
   margin:0 auto;
 }
 .qr-caption-centered{
@@ -225,7 +225,7 @@ body{
   .method-bottom{ flex-direction:column !important; align-items:center !important; gap:12px !important; }
   .qr-meta{ align-items:center !important; text-align:center; }
 
-  .qr-box{ width:280px; height:280px; border:1px solid #ccc; border-radius:8px; padding:0; box-shadow:none; }
+  .qr-box{ width:300px; height:300px; border:none; border-radius:0; padding:0; box-shadow:none; background:transparent; }
   .qr-caption{ color:#555 !important; font-size:12px; }
 
   /* Copy-to-clipboard has no meaning on paper — hidden with extra reinforcement */
