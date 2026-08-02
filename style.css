@@ -2,7 +2,7 @@
 
 :root{
   --black:#070707;
-  --ink:#f2f1ec;
+  --ink:#c9a24a;
   --gray:#6f6d66;
   --brass:#b9924f;
   --line:#1c1b18;
@@ -146,8 +146,8 @@ body{
 
 .qr-box{
   width:160px;height:160px;flex-shrink:0;
-  background:transparent;
-  border-radius:0;
+  background:#000000;
+  border-radius:6px;
   border:none;
   box-shadow:none;
   position:relative;
@@ -225,7 +225,7 @@ body{
   .method-bottom{ flex-direction:column !important; align-items:center !important; gap:12px !important; }
   .qr-meta{ align-items:center !important; text-align:center; }
 
-  .qr-box{ width:300px; height:300px; border:none; border-radius:0; padding:0; box-shadow:none; background:transparent; }
+  .qr-box{ width:300px; height:300px; border:none; border-radius:0; padding:0; box-shadow:none; background:#000000; }
   .qr-caption{ color:#555 !important; font-size:12px; }
 
   /* Copy-to-clipboard has no meaning on paper — hidden with extra reinforcement */

@@ -18,10 +18,10 @@ function renderQR(qrId){
   var opts={
     type:'svg',
     width:size, height:size, data:val, margin:0,
-    dotsOptions:{ type:'extra-rounded', color:'#000000' },
-    cornersSquareOptions:{ type:'extra-rounded', color:'#000000' },
-    cornersDotOptions:{ type:'dot', color:'#000000' },
-    backgroundOptions:{ color:'#ffffff' },
+    dotsOptions:{ type:'extra-rounded', color:'#ffffff' },
+    cornersSquareOptions:{ type:'extra-rounded', color:'#ffffff' },
+    cornersDotOptions:{ type:'dot', color:'#ffffff' },
+    backgroundOptions:{ color:'#000000' },
     qrOptions:{ errorCorrectionLevel:'H' }
   };
   if(logo){
