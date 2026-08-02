@@ -13,7 +13,7 @@ function renderQR(qrId){
   var val=el.getAttribute('data-qr');
   var logo=el.getAttribute('data-logo');
 
-  var size = el.offsetWidth || 160;
+  var size = el.offsetWidth || 235;
 
   var opts={
     type:'svg',
