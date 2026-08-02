@@ -13,27 +13,25 @@ function renderQR(qrId){
   var val=el.getAttribute('data-qr');
   var logo=el.getAttribute('data-logo');
 
-  /* حجم الـ QR = نفس حجم الـ box بالظبط */
   var size = el.offsetWidth || 160;
 
   var opts={
     type:'svg',
     width:size, height:size, data:val, margin:0,
-    dotsOptions:{ type:'extra-rounded', color:'#c9a24a' },
-    cornersSquareOptions:{ type:'extra-rounded', color:'#c9a24a' },
-    cornersDotOptions:{ type:'dot', color:'#c9a24a' },
-    backgroundOptions:{ color:'#f2f1ec' },
+    dotsOptions:{ type:'extra-rounded', color:'#000000' },
+    cornersSquareOptions:{ type:'extra-rounded', color:'#000000' },
+    cornersDotOptions:{ type:'dot', color:'#000000' },
+    backgroundOptions:{ color:'#ffffff' },
     qrOptions:{ errorCorrectionLevel:'H' }
   };
   if(logo){
     opts.image=logo;
-    opts.imageOptions={ crossOrigin:'anonymous', margin:4, imageSize:0.42, hideBackgroundDots:true };
+    opts.imageOptions={ crossOrigin:'anonymous', margin:4, imageSize:0.38, hideBackgroundDots:true };
   }
 
   var qrCode = new QRCodeStyling(opts);
   qrCode.append(el);
 
-  /* اجعل الـ SVG يملأ الـ box كامل */
   var svg = el.querySelector('svg');
   if(svg){
     svg.style.width  = '100%';
